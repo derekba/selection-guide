@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import {createMuiTheme, ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 
@@ -19,10 +19,22 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { location, length, width, occupancy, roomCharacteristics  }
     } = this.props;
+
+    const theme = createMuiTheme({
+      palette: {
+        primary: {
+          main: '#0055a0',
+        },
+        secondary: {
+          main: '#8e8e8e',
+        },
+      },
+    });
+
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
         <>
           <Dialog
             open
@@ -32,26 +44,23 @@ export class Confirm extends Component {
             <AppBar title="Confirm User Data" />
             <List>
               <ListItem>
-                <ListItemText primary="First Name" secondary={firstName} />
+                <ListItemText primary="Location" secondary={location} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Last Name" secondary={lastName} />
+                <ListItemText primary="Length in inches" secondary={length} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Email" secondary={email} />
+                <ListItemText primary="Width in inches" secondary={width} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Occupation" secondary={occupation} />
+                <ListItemText primary="Occupancy" secondary={occupancy} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="City" secondary={city} />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Bio" secondary={bio} />
+                <ListItemText primary="Room Characteristics" secondary={roomCharacteristics} />
               </ListItem>
             </List>
             <br />
-
+            <br />
             <Button
               color="secondary"
               variant="contained"

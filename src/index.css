@@ -6,8 +6,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:16px;
+  font-weight: bold;
 }
-
+.MuiButton-label{
+  font-weight: bold;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -19,4 +23,25 @@ code {
 
 button.MuiButton-containedSecondary {
   margin-bottom: 10px;
+}
+
+.MuiDialog-paperFullWidth{
+  overflow-x:hidden !important;
+}
+.or{
+  color:#8e8e8e;
+}
+.MuiTypography-h6 {
+  font-size: 1.6rem !important;
+  font-width: bold !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.MuiSlider-markLabel {
+  top: 26px;
+  color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+  font-size: 1rem !important;
+  margin-top: 4px;
 }

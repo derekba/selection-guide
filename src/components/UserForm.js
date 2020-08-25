@@ -33,10 +33,21 @@ export class UserForm extends Component {
     });
   };
 
+  firstStep = () => {
+    this.setState({
+      step: 1,
+      location: '',
+      length: '',
+      width: '',
+      occupancy: 1,
+      roomCharacteristics: ''
+    });
+  };
+
   // Handle fields change
   handleChange = input => e => {
       this.setState({ [input]: e.target.value });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
 
@@ -50,6 +61,7 @@ export class UserForm extends Component {
         return (
           <FormUserDetails
               nextStep={this.nextStep}
+              firstStep={this.firstStep}
               handleChange={this.handleChange}
               values={values}
           />
@@ -59,6 +71,7 @@ export class UserForm extends Component {
           <FormPersonalDetails
             nextStep={this.nextStep}
             prevStep={this.prevStep}
+            firstStep={this.firstStep}
             handleChange={this.handleChange}
             values={values}
           />
@@ -68,6 +81,7 @@ export class UserForm extends Component {
           <FormPeopleDetails
               nextStep={this.nextStep}
               prevStep={this.prevStep}
+              firstStep={this.firstStep}
               handleChange={this.handleChange}
               values={values}
           />
@@ -77,6 +91,7 @@ export class UserForm extends Component {
           <FormCharacteristicDetails
               nextStep={this.nextStep}
               prevStep={this.prevStep}
+              firstStep={this.firstStep}
               handleChange={this.handleChange}
               values={values}
           />
@@ -86,6 +101,7 @@ export class UserForm extends Component {
             <Confirm
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
+                firstStep={this.firstStep}
                 values={values}
             />
         );

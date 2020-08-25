@@ -33,7 +33,7 @@ button.MuiButton-containedSecondary {
 }
 .MuiTypography-h6 {
   font-size: 1.6rem !important;
-  font-width: bold !important;
+  font-weight: bold !important;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1.6;
   letter-spacing: 0.0075em;
@@ -44,4 +44,14 @@ button.MuiButton-containedSecondary {
   position: absolute;
   font-size: 1rem !important;
   margin-top: 4px;
+}
+.product-image{
+  text-align: center;
+}
+.MuiChip-root{
+  margin:5px;
+}
+.MuiSlider-root{
+  width:99% !important;
+  margin-top:20px;
 }

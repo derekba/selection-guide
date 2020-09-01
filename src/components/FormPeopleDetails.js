@@ -57,17 +57,17 @@ export class FormPeopleDetails extends Component {
         const theme = createMuiTheme({
             palette: {
                 primary: {
-                    main: '#0055a0',
+                    main: '#007AE5',
                 },
                 secondary: {
-                    main: '#8e8e8e',
+                    main: '#E0E4E7',
                 },
             },
         });
 
         const PrettoSlider = withStyles({
           root: {
-            color: '#007bc3',
+            color: '#007AE5',
             height: 8,
           },
           thumb: {
@@ -117,7 +117,7 @@ export class FormPeopleDetails extends Component {
                             defaultValue={values.occupancy}
                             getAriaValueText={this.valuetext}
                             aria-labelledby="discrete-slider"
-                            valueLabelDisplay="auto"
+                            valueLabelDisplay="on"
                             step={1}
                             marks={marks}
                             min={1}

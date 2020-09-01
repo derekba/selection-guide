@@ -10,7 +10,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-export class FormCharacteristicDetails extends Component {
+export class FormBrandDetails extends Component {
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -21,11 +22,9 @@ export class FormCharacteristicDetails extends Component {
         this.props.prevStep();
     };
 
-
     render() {
-        const { values, handleCheckboxChange } = this.props;
-        // const { roomCharacteristics } = values.roomCharacteristics;
 
+        const { values, handleCheckboxChange } = this.props;
         const theme = createMuiTheme({
             palette: {
                 primary: {
@@ -44,34 +43,39 @@ export class FormCharacteristicDetails extends Component {
                     fullWidth
                     maxWidth='sm'
                 >
-                    <DialogTitle align="center" id="form-dialog-title">Do any of these room characteristics apply?</DialogTitle>
+                    <DialogTitle align="center" id="form-dialog-title">Do you have a brand or warranty preference?</DialogTitle>
                     <DialogContent>
                         <DialogContentText align="center">
                             Select all that apply.
                         </DialogContentText>
+
                         <FormGroup>
                             <FormControlLabel
-                                control={<Checkbox checked={values.highCeilings} onChange={handleCheckboxChange('highCeilings')} name="highCeilings" color="primary"/>}
-                                label="High Ceilings"
+                                control={<Checkbox checked={values.directSupplyWarranty} onChange={handleCheckboxChange('directSupplyWarranty')} name="directSupplyWarranty" color="primary"/>}
+                                label="Direct Supply Warranty"
                                 color="primary"
                             />
                             <FormControlLabel
-                                control={<Checkbox checked={values.lotsOfSunlight} onChange={handleCheckboxChange('lotsOfSunlight')} name="lotsOfSunlight" color="primary"/>}
-                                label="Lots of sunlight"
+                                control={<Checkbox checked={values.geWarranty} onChange={handleCheckboxChange('geWarranty')} name="geWarranty" color="primary"/>}
+                                label="GE Warranty"
                                 color="primary"
                             />
                             <FormControlLabel
-                                control={<Checkbox checked={values.heavilyInsulated} onChange={handleCheckboxChange('heavilyInsulated')} name="heavilyInsulated" color="primary"/>}
-                                label="Heavily insultated"
+                                control={<Checkbox checked={values.amanaWarranty} onChange={handleCheckboxChange('amanaWarranty')} name="amanaWarranty" color="primary"/>}
+                                label="Amana Warranty"
+                                color="primary"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox checked={values.friedrichWarranty} onChange={handleCheckboxChange('friedrichWarranty')} name="friedrichWarranty" color="primary"/>}
+                                label="Friedrich Warranty"
+                                color="primary"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox checked={values.islandaireWarranty} onChange={handleCheckboxChange('islandaireWarranty')} name="islandaireWarranty" color="primary"/>}
+                                label="Islandaire Warranty"
+                                color="primary"
                             />
                         </FormGroup>
-                        {/*<FormControl component="fieldset">*/}
-                        {/*    <RadioGroup aria-label="roomCharacteristics" name="roomCharacteristics" defaultValue={values.roomCharacteristics} value={roomCharacteristics} onChange={handleChange('roomCharacteristics')} >*/}
-                        {/*        <FormControlLabel value="High Ceilings" control={<Radio />} label="High Ceilings" />*/}
-                        {/*        <FormControlLabel value="Lots of sunlight" control={<Radio />} label="Lots of sunlight" />*/}
-                        {/*        <FormControlLabel value="Heavily insulated" control={<Radio />} label="Heavily insulated" />*/}
-                        {/*    </RadioGroup>*/}
-                        {/*</FormControl>*/}
                         <br />
                         <br />
                         <Button
@@ -94,4 +98,4 @@ export class FormCharacteristicDetails extends Component {
     }
 }
 
-export default FormCharacteristicDetails;
+export default FormBrandDetails;

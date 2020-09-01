@@ -55,3 +55,26 @@ button.MuiButton-containedSecondary {
   width:99% !important;
   margin-top:20px;
 }
+
+.MuiButton-fullWidth {
+  width: calc(50% - 10px) !important;
+  margin: 10px !important;
+}
+.MuiButton-containedSecondary {
+  margin-left:0 !important;
+}
+.MuiButton-containedPrimary {
+  margin-right:0 !important;
+}
+.shop-all-info{
+  text-align:center;
+}
+.shop-all-info p{
+  color: rgba(0, 0, 0, 0.54);
+}
+.shop-all-info a{
+  color: #007AE5;
+}
+.confirmation-tags{
+  text-align: center;
+}

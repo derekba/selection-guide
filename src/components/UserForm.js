@@ -3,6 +3,9 @@ import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import FormPeopleDetails from './FormPeopleDetails';
 import FormCharacteristicDetails from './FormCharacteristicDetails';
+import FormFeatureDetails from './FormFeatureDetails';
+import FormPlugDetails from './FormPlugDetails';
+import FormBrandDetails from './FormBrandDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 
@@ -14,7 +17,19 @@ export class UserForm extends Component {
     length: '',
     width: '',
     occupancy: 1,
-    roomCharacteristics: ''
+    highCeilings: false,
+    lotsOfSunlight: false,
+    heavilyInsulated: false,
+    dryAirUnit: false,
+    internalCondensateRemoval: false,
+    temperatureLimiting: false,
+    dualFanMotors: false,
+    plugType: '',
+    directSupplyWarranty: false,
+    geWarranty: false,
+    amanaWarranty: false,
+    friedrichWarranty: false,
+    islandaireWarranty: false,
   };
 
   // Proceed to next step
@@ -23,6 +38,7 @@ export class UserForm extends Component {
     this.setState({
       step: step + 1
     });
+    // console.log(this.state);
   };
 
   // Go back to prev step
@@ -40,7 +56,19 @@ export class UserForm extends Component {
       length: '',
       width: '',
       occupancy: 1,
-      roomCharacteristics: ''
+      highCeilings: false,
+      lotsOfSunlight: false,
+      heavilyInsulated: false,
+      dryAirUnit: false,
+      internalCondensateRemoval: false,
+      temperatureLimiting: false,
+      dualFanMotors: false,
+      plugType: '',
+      directSupplyWarranty: false,
+      geWarranty: false,
+      amanaWarranty: false,
+      friedrichWarranty: false,
+      islandaireWarranty: false,
     });
   };
 
@@ -50,11 +78,24 @@ export class UserForm extends Component {
     // console.log(this.state);
   };
 
+  handleCheckboxChange = input => e => {
+    this.setState({ [input]: e.target.checked });
+    // console.log(this.state);
+  };
+
+  getLocation = e => {
+    e.preventDefault();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      let div = document.getElementById('location');
+      div.innerHTML = "Latitude is : " + position.coords.latitude + "<br>" + "Longitude is : " + position.coords.longitude;
+    });
+
+  };
 
   render() {
     const { step } = this.state;
-    const { location, length, width, occupancy, roomCharacteristics } = this.state;
-    const values = { location, length, width, occupancy, roomCharacteristics };
+    const { location, length, width, occupancy, highCeilings, lotsOfSunlight, heavilyInsulated, dryAirUnit, internalCondensateRemoval, temperatureLimiting, dualFanMotors, plugType, directSupplyWarranty, geWarranty, amanaWarranty, friedrichWarranty, islandaireWarranty } = this.state;
+    const values = { location, length, width, occupancy, highCeilings, lotsOfSunlight, heavilyInsulated, dryAirUnit, internalCondensateRemoval, temperatureLimiting, dualFanMotors, plugType, directSupplyWarranty, geWarranty, amanaWarranty, friedrichWarranty, islandaireWarranty };
 
     switch (step) {
       case 1:
@@ -63,6 +104,7 @@ export class UserForm extends Component {
               nextStep={this.nextStep}
               firstStep={this.firstStep}
               handleChange={this.handleChange}
+              getLocation={this.getLocation}
               values={values}
           />
         );
@@ -93,10 +135,43 @@ export class UserForm extends Component {
               prevStep={this.prevStep}
               firstStep={this.firstStep}
               handleChange={this.handleChange}
+              handleCheckboxChange={this.handleCheckboxChange}
               values={values}
           />
         );
-      case 5:
+        case 5:
+        return (
+          <FormPlugDetails
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              firstStep={this.firstStep}
+              handleChange={this.handleChange}
+              values={values}
+          />
+        );
+        case 6:
+        return (
+          <FormFeatureDetails
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              firstStep={this.firstStep}
+              handleChange={this.handleChange}
+              handleCheckboxChange={this.handleCheckboxChange}
+              values={values}
+          />
+        );
+        case 7:
+        return (
+          <FormBrandDetails
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              firstStep={this.firstStep}
+              handleChange={this.handleChange}
+              handleCheckboxChange={this.handleCheckboxChange}
+              values={values}
+          />
+        );
+      case 8:
         return (
             <Confirm
                 nextStep={this.nextStep}
@@ -105,7 +180,7 @@ export class UserForm extends Component {
                 values={values}
             />
         );
-      case 6:
+      case 9:
         return <Success />;
       default:
         (console.log('This is a multi-step form built with React.'))

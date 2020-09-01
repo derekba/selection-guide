@@ -63,10 +63,10 @@ export class FormPersonalDetails extends Component {
     const theme = createMuiTheme({
       palette: {
         primary: {
-          main: '#0055a0',
+          main: '#007AE5',
         },
         secondary: {
-          main: '#8e8e8e',
+          main: '#E0E4E7',
         },
       },
     });

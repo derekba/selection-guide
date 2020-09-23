@@ -19,6 +19,7 @@ export class Confirm extends Component {
   back = e => {
     e.preventDefault();
     this.props.prevStep();
+    console.log(this.state);
   };
 
   startover = e => {

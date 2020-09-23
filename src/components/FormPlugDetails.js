@@ -54,11 +54,11 @@ export class FormPlugDetails extends Component {
                         {/*</DialogContentText>*/}
                         <FormControl component="fieldset" color="primary">
                             <RadioGroup color="primary" aria-label="plugType" name="plugType" defaultValue={values.plugType} value={plugType} onChange={handleChange('plugType')} >
-                                <FormControlLabel color="primary" value="230/208V 15 amp tandem" control={<Radio />} label="230/208V 15 amp tandem" />
-                                <FormControlLabel value="230/208V 20 amp perpendicular" control={<Radio />} label="230/208V 20 amp perpendicular" />
-                                <FormControlLabel value="230/208V 30 amp large tandem" control={<Radio />} label="230/208V 30 amp large tandem" />
-                                <FormControlLabel value="265/277V 20 amp" control={<Radio />} label="265/277V 20 amp" />
-                                <FormControlLabel value="265/277V 30 amp" control={<Radio />} label="265/277V 30 amp" />
+                                <FormControlLabel color="primary" value="230/208V 15 amp tandem" control={<Radio color="primary" />} label="230/208V 15 amp tandem" />
+                                <FormControlLabel value="230/208V 20 amp perpendicular" control={<Radio color="primary" />} label="230/208V 20 amp perpendicular" />
+                                <FormControlLabel value="230/208V 30 amp large tandem" control={<Radio color="primary" />} label="230/208V 30 amp large tandem" />
+                                <FormControlLabel value="265/277V 20 amp" control={<Radio color="primary" />} label="265/277V 20 amp" />
+                                <FormControlLabel value="265/277V 30 amp" control={<Radio color="primary" />} label="265/277V 30 amp" />
                             </RadioGroup>
                         </FormControl>
                         <br />

@@ -38,7 +38,7 @@ export class UserForm extends Component {
     this.setState({
       step: step + 1
     });
-    // console.log(this.state);
+     console.log(this.state);
   };
 
   // Go back to prev step
